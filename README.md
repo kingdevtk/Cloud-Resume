@@ -1,1 +1,1 @@
-
+I leveraged HTML and CSS design elements from a few website templates and combined these with a reworked version of my PDF resume. For the site's visitor counter, I googled and hacked together some JavaScript 
