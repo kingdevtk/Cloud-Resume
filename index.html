@@ -168,13 +168,150 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>Website Visit Count:</div>
-    <div class="website-counter"></div>
+    <div>Website Visit Count:<span class="website-counter"></span></div>
+    <!-- <div class="website-counter"></div> -->
   </body>
 </html>
                         </div>
                       </div>
                     </div>
-                  
-                  
-                  
+<script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+<script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+<script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+<script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+<script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+<script type="text/javascript" src="lib/url-template/url-template.js"></script>
+<script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+<script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+<script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+<script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+<script type="text/javascript" src="apigClient.js"></script>
+
+<script type="text/javascript">
+var apigClientFactory = {};
+apigClientFactory.newClient = function (config) {
+    var apigClient = { };
+    if(config === undefined) {
+        config = {
+            accessKey: 'AKIAWMBZV7HHWALZIADU',
+            secretKey: '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',
+            sessionToken: '',
+            region: 'us-east-1',
+            apiKey: p4xNNSWJeO3CGeo5a3ySeeSwqHhCdKMoqMnUUC70,
+            defaultContentType: 'application/json',
+            defaultAcceptType: 'application/json'
+        };
+    }
+    if(config.accessKey === undefined) {
+        config.accessKey = '';
+    }
+    if(config.secretKey === undefined) {
+        config.secretKey = '';
+    }
+    if(config.apiKey === undefined) {
+        config.apiKey = '';
+    }
+    if(config.sessionToken === undefined) {
+        config.sessionToken = '';
+    }
+    if(config.region === undefined) {
+        config.region = 'us-east-1';
+    }
+    //If defaultContentType is not defined then default to application/json
+    if(config.defaultContentType === undefined) {
+        config.defaultContentType = 'application/json';
+    }
+    //If defaultAcceptType is not defined then default to application/json
+    if(config.defaultAcceptType === undefined) {
+        config.defaultAcceptType = 'application/json';
+    }
+
+    
+    // extract endpoint and path from url
+    var invokeUrl = 'https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod';
+    var endpoint = /(^https?:\/\/[^\/]+)/g.exec(invokeUrl)[1];
+    var pathComponent = invokeUrl.substring(endpoint.length);
+
+    var sigV4ClientConfig = {
+        accessKey: config.accessKey,
+        secretKey: config.secretKey,
+        sessionToken: config.sessionToken,
+        serviceName: 'execute-api',
+        region: config.region,
+        endpoint: endpoint,
+        defaultContentType: config.defaultContentType,
+        defaultAcceptType: config.defaultAcceptType
+    };
+
+    var authType = 'NONE';
+    if (sigV4ClientConfig.accessKey !== undefined && sigV4ClientConfig.accessKey !== '' && sigV4ClientConfig.secretKey !== undefined && sigV4ClientConfig.secretKey !== '') {
+        authType = 'AWS_IAM';
+    }
+
+    var simpleHttpClientConfig = {
+        endpoint: endpoint,
+        defaultContentType: config.defaultContentType,
+        defaultAcceptType: config.defaultAcceptType
+    };
+
+    var apiGatewayClient = apiGateway.core.apiGatewayClientFactory.newClient(simpleHttpClientConfig, sigV4ClientConfig);
+    
+    
+    
+    apigClient.rootGet = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        
+        var rootGetRequest = {
+            verb: 'get'.toUpperCase(),
+            path: pathComponent + uritemplate('/').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(rootGetRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.rootPost = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        
+        var rootPostRequest = {
+            verb: 'post'.toUpperCase(),
+            path: pathComponent + uritemplate('/').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(rootPostRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.rootOptions = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        
+        var rootOptionsRequest = {
+            verb: 'options'.toUpperCase(),
+            path: pathComponent + uritemplate('/').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(rootOptionsRequest, authType, additionalParams, config.apiKey);
+    };
+    
+
+    return apigClient;
+};
+</script>
