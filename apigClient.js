@@ -31,12 +31,6 @@ apigClient.GET(params, body, additionalParams)
     }).catch( function(result){
       // Add error callback code here.
   
-apigClient.OPTIONS(params, body, additionalParams)
-    .then(function(result){
-      // Add success callback code here.
-    }).catch( function(result){
-      // Add error callback code here.    
-  
 apigClient.POST(params, body, additionalParams)
     .then(function(result){
       // Add success callback code here.
