@@ -1,6 +1,4 @@
-var apigClientFactory = require('aws-api-gateway-client').default;
-config = {invokeUrl:'https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod'}
-var apigClient = apigClientFactory.newClient(config);
+var apigClient = apigClientFactory.newClient();
 var params = {
   // This is where any modeled request parameters should be added.
   // The key is the parameter name, as it is defined in the API in API Gateway.
@@ -25,15 +23,9 @@ var additionalParams = {
   }
 };
 
-apigClient.GET(params, body, additionalParams)
+apigClient.methodName(params, body, additionalParams)
     .then(function(result){
       // Add success callback code here.
     }).catch( function(result){
       // Add error callback code here.
-  
-apigClient.POST(params, body, additionalParams)
-    .then(function(result){
-      // Add success callback code here.
-    }).catch( function(result){
-      // Add error callback code here.  
- });
+    });
