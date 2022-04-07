@@ -162,23 +162,13 @@
                               </div>
                             </div>
                           </div>
-<!-- Script for the visitor counter -->
-          <script>
-            var dev_env = false
-            if (dev_env == false) {
-                fetch("https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod")
-                    .then(function (response) {
-                        return response.json()
-                    })  
-                    .then(function (myJson) {
-                        console.log("Visitor Count: " + myJson.visitorCount);
-                        document.querySelector("#visitorCount").innerHTML = "You are visitor: " + myJson.visitorCount;
-                    })
-                    .catch(function (error) {
-                        console.log("Error: " + error)
-                    })
-            }
-        </script>
-      </body>
- </html>
-  
+<head>
+    <title>Website Counter</title>
+    <script defer src="counter.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>You Are Visitor:<span class="website-counter"></span></div>
+    <!-- <div class="website-counter"></div> -->
+  </body>
+</html>
