@@ -4,10 +4,9 @@
         // call an AWS gateway API, that then calls an AWS Lambda
         // to read and then update AWS DynamoDB item showing load count
 
-        // Note call is synchronous, delays should be minimal
         var req = new XMLHttpRequest();  
         req.open('GET', 
-        "https://cimk9zx0ch.execute-api.ap-southeast-2.amazonaws.com/beta", 
+        "https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod", 
         false);   
         req.send();  
         if(req.status == 200)
