@@ -162,13 +162,17 @@
                               </div>
                             </div>
                           </div>
-<head>
-    <title>Website Counter</title>
-    <script defer src="counter.py"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div>You Are Visitor:<span class="website-counter"></span></div>
-    <!-- <div class="website-counter"></div> -->
-  </body>
+<footer>
+    <p class="counter"> You are visitor </p>
+  <p id ="body"></p>
+      <script type = "text/javascript">
+        var apiUrl = "https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod";
+            fetch(apiUrl)
+               .then(response => response.json())
+               .then(data =>{
+                    var count = document.getElementById('body');
+                count.innerHTML = data.body;
+                console.log(data)});
+         </script>
+                        </footer>
 </html>
