@@ -164,13 +164,13 @@
                           </div>
 <footer>
     <p class="counter"> You are visitor </p>
-  <p id ="body"></p>
+  <p id =data></p>
       <script type = "text/javascript">
         var apiUrl = "https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod";
             fetch(apiUrl)
                .then(response => response.json())
                .then(data =>{
-                    var count = document.getElementById('body');
+                    var count = document.getElementById('data');
                 count.innerHTML = data.body;
                 console.log(data)});
          </script>
