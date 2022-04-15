@@ -163,16 +163,24 @@
                             </div>
                           </div>
 <footer>
-    <p class="counter"> You are visitor </p>
-  <p id =data></p>
-      <script type = "text/javascript">
-        var apiUrl = "https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod";
-            fetch(apiUrl)
-               .then(response => response.json())
-               .then(data =>{
-                    var count = document.getElementById('data');
-                count.innerHTML = data.body;
-                console.log(data)});
-         </script>
+    <p style = "text-align: center;">
+You are visitor: <span id="visits">0</span>
+</p>
+
+<script>
+
+const countElement = document.getElementById("visits");
+
+function updateVisitCount() {
+    fetch('https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/')
+    .then(res => res.text())
+    .then(res => {
+        countElement.innerHTML = res.hits;
+    })
+}
+
+updateVisitCount();
+
+</script>
                         </footer>
 </html>
