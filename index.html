@@ -173,9 +173,9 @@ const countElement = document.getElementById("visits");
 
 function updateVisitCount() {
     fetch('https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/')
-    .then(res => res.text())
+    .then(res => res.json())
     .then(res => {
-        countElement.innerHTML = res.value;
+        countElement.innerHTML = res.hits;
     })
 }
 
