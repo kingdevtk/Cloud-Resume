@@ -175,7 +175,7 @@ function updateVisitCount() {
     fetch('https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/')
     .then(res => res.text())
     .then(res => {
-        countElement.innerHTML = res.hits;
+        countElement.innerHTML = res.value;
     })
 }
 
