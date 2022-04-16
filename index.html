@@ -169,17 +169,32 @@ You are visitor: <span id="visits"></span>
 
 <script>
 
-const countElement = document.getElementById("visits");
+var visits = document.getElementById("visits");
+fetch("https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/", {
+    method: "GET",
+    // mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      //"Access-Control-Allow-Origin" : "*",
+    },
+  })
+  .then(response => response.json())
 
-function updateVisitCount() {
-    fetch('https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/')
-    .then(res => res.json())
-    .then(res => {
-        countElement.innerHTML = res.hits;
-    })
-}
-
-updateVisitCount();
+fetch("https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/", {
+    method: "POST",
+    // mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      //"Access-Control-Allow-Origin" : "*",
+    },
+  })
+  .then(response => response.json())
+  .then(data => {
+    visits.innerHTML = data;
+  })
+  .catch((error) => {
+    console.log(error);
+  })
 
 </script>
                         </footer>
