@@ -12,7 +12,7 @@ module "ecr" {
   image_tag_mutability    = var.image_tag_mutability
   scan_images_on_push     = true
   enable_lifecycle_policy = true
-  tags                    = var.loupe_tags
+  tags                    = var.kingdevtk_tags
 
   context = module.this.context
 }

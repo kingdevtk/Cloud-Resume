@@ -1,6 +1,6 @@
   # Amazon ECS (Elastic Container Service) Service Terraform Module
 
-This module is responsible for creating and configuring an ECS service in AWS in compliance with company standards.
+This module is responsible for creating and configuring an ECS service in AWS.
 
 ## What does this module do?
 ----------------------------
@@ -154,28 +154,28 @@ This module create the following resources in the targeted AWS account:
 ## Module Usage
 ---------------
 ```
-module "loupe_ecs_fargate_service" {
-    source  = "spacelift.io/loupetheapp/terraform-aws-ecs-fargate-service/aws"
+module "kingdevtk_ecs_fargate_service" {
+    source  = "spacelift.io/kingdevtk/terraform-aws-ecs-fargate-service/aws"
     version = "1.1.0"
 
     environment = "dev"
     region      = "us-east-1"
     vpc_id      = "vpc-0d5bd907e1fc1b504"
 
-    ecs_service_name                = "loupe-ecs-service"
-    ecs_service_cluster_id          = "arn:aws:ecs:us-east-1:383156531227:cluster/loupe-ecs-cluster"
+    ecs_service_name                = "kingdevtk-ecs-service"
+    ecs_service_cluster_id          = "arn:aws:ecs:us-east-1:383156531227:cluster/kingdevtk-ecs-cluster"
     ecs_service_task_count          = 1
     ecs_service_security_groups     = ["sg-05025f31fec480a16"]
     add_load_balancer_configuration = false
 
-    ecs_task_definition_name    = "loupe-task-definition"
+    ecs_task_definition_name    = "kingdevtk-task-definition"
     ecs_task_unit_cpu           = 1024
     ecs_task_unit_memory        = 2048
     ecs_task_execution_role_arn = "arn:aws:iam::383156531227:role/ecsTaskExecutionRole"
     ecs_task_role_arn           = "arn:aws:iam::383156531227:role/ecsTaskRole"
 
-    container_name  = "loupe-container"
-    container_image = "loupe-api:latest"
+    container_name  = "kingdevtk-container"
+    container_image = "kingdevtk-api:latest"
     port_mappings   = [
         {
             "hostPort" : 3000,
@@ -184,6 +184,6 @@ module "loupe_ecs_fargate_service" {
         }
     ]
 
-    ecs_environment_variable_secret_name = "loupe-environment-secrets-name"
+    ecs_environment_variable_secret_name = "kingdevtk-environment-secrets-name"
 }
 ```

@@ -1,6 +1,6 @@
   # AWS ALB (Application Load Balancer) Terraform Module
 
-This module is responsible for creating and configuring an application load balancer in AWS in compliance with company standards.
+This module is responsible for creating and configuring an application load balancer in AWS.
 
 ## What does this module do?
 ----------------------------
@@ -184,28 +184,28 @@ This module creates the following resources in the targeted AWS account:
 ---------------
 **Create Application Load Balancer**
 ```
-module "loupe_alb" {
-  source  = "spacelift.io/loupetheapp/terraform-aws-alb/aws"
+module "alb" {
+  source  = "spacelift.io/kingdevtk/terraform-aws-alb/aws"
   version = "2.0.0"
 
   app_name    = "test-app"
   environment = "use1"
   is_internal = false
   loupe_tags  = { Team = "DevOps" }
-  namespace   = "loupe"
+  namespace   = "kingdevtk"
   stage       = "dev"
 
   alb_ingress_cidr_blocks = ["8.9.5.95/32"]
-  ssl_certificate_arn     = "arn:aws:acm:us-east-1:383156531227:certificate/ba089a5b-ae18-4291-8d1b-d4d423de95d4"
+  ssl_certificate_arn     = "arn:aws:acm:us-east-1:383156531227:certificate/ba123a5b-ae18-4291-8d1b-d4d423de95d4"
   target_group_port       = 3000
-  vpc_id                  = "vpc-0d5bd907e1fc1b504"
+  vpc_id                  = "vpc-1234ac907e1fc1b504"
 }
 ```
 
 **Create Application Load Balancer With Cognito and Route53 Alias**
 ```
-module "loupe_alb_with_cognito" {
-  source  = "spacelift.io/loupetheapp/terraform-aws-alb/aws"
+module "alb_with_cognito" {
+  source  = "spacelift.io/kingdevtk/terraform-aws-alb/aws"
   version = "2.2.0"
 
   app_name    = "test-app"
@@ -227,7 +227,7 @@ module "loupe_alb_with_cognito" {
   vpc_id                   = "vpc-0d5bd907e1fc1b504"
 
   create_route53_alias   = true
-  alb_route53_alias      = "test.dev-backend.loupetheapp.com"
+  alb_route53_alias      = "test.dev-backend.kingdevtk.com"
   route53_parent_zone_id = "Z0605619360CWBQOF2DUO"
 }
 ```

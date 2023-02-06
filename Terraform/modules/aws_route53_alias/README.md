@@ -38,16 +38,16 @@ This module create the following resources in the targeted AWS account:
 ## Module Usage
 ---------------
 ```
-module "loupe_alb_route53_record" {
-  source  = "spacelift.io/loupetheapp/terraform-aws-route53-alias/aws"
+module "kingdevtk_alb_route53_record" {
+  source  = "spacelift.io/kingdevtktheapp/terraform-aws-route53-alias/aws"
   version = "1.0.0"
 
   region = "us-east-1"
 
-  route53_record_name = "loupe.dev-backend.loupetheapp.com"
-  route53_zone_name   = "dev-backend.loupetheapp.com"
+  route53_record_name = "kingdevtk.dev-backend.kingdevtktheapp.com"
+  route53_zone_name   = "dev-backend.kingdevtktheapp.com"
 
-  route53_alias_target_dns_name = "loupe-1630911274.us-east-1.elb.amazonaws.com"
+  route53_alias_target_dns_name = "kingdevtk-1630911274.us-east-1.elb.amazonaws.com"
   route53_alias_target_zone_id  = "Z35SXDOTRQ7X7K"
 }
 
