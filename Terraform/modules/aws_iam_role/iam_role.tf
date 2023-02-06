@@ -10,7 +10,7 @@ module "iam-role" {
   policy_document_count = 0
   managed_policy_arns   = var.aws_managed_policy_arns
   principals            = var.iam_role_principals
-  tags                  = var.loupe_tags
+  tags                  = var.kingdevtk_tags
 
   context = module.this.context
 }

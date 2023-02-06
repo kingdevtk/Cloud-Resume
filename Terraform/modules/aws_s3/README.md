@@ -34,12 +34,12 @@ This module creates the following resources in the targeted AWS account:
 ## Module Usage
 ---------------
 ```
-module "loupe_s3_bucket" {
-  source  = "spacelift.io/loupetheapp/terraform-aws-s3/aws"
+module "kingdevtk_s3_bucket" {
+  source  = "spacelift.io/kingdevtktheapp/terraform-aws-s3/aws"
   version = "1.0.0"
 
   region      = "us-east-1"
-  bucket_name = "loupe-use1-dev-bucket"
+  bucket_name = "kingdevtk-use1-dev-bucket"
   tags = {
     Environment = "dev"
   }

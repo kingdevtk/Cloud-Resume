@@ -14,7 +14,7 @@ variable "is_internal" {
   type        = bool
 }
 
-variable "loupe_tags" {
+variable "kingdevtk_tags" {
   description = "A map of additional tags to assign to resources."
   type = object({
     Team = string

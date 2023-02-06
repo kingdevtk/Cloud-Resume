@@ -1,12 +1,12 @@
-module "loupe_alb" {
-  source  = "spacelift.io/loupetheapp/terraform-aws-alb/aws"
+module "alb" {
+  source  = "spacelift.io/kingdevtk/terraform-aws-alb/aws"
   version = "2.2.0"
 
   app_name    = "test-app"
   environment = "use1"
   is_internal = false
   loupe_tags  = { Team = "DevOps" }
-  namespace   = "loupe"
+  namespace   = "kingdevtk"
   stage       = var.stage
 
   alb_ingress_cidr_blocks = var.alb_ingress_cidr_blocks

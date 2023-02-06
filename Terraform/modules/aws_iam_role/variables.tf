@@ -3,7 +3,7 @@ variable "app_name" {
   type        = string
 }
 
-variable "loupe_tags" {
+variable "kingdevtk_tags" {
   description = "a map of additional tags to assign to resources"
   type        = object({ Team = string })
 }

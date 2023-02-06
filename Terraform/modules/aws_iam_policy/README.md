@@ -11,7 +11,7 @@ This module creates the following resources in the targeted AWS account:
 -------------------
 ### Required Variables
 **namespace**
-- name or abbreviation of the organization (should be set to "loupe")
+- name or abbreviation of the organization (should be set to "kingdevtk")
 
 **stage**
 - the environment that the IAM role will be deployed in
@@ -25,7 +25,7 @@ This module creates the following resources in the targeted AWS account:
 - the name of the application the resource will be part of
 - *type*: string
 
-**loupe_tags**
+**kingdevtk_tags**
 - a map of additional tags to assign to resources
 - type: object({ Team = string })
 
@@ -45,11 +45,11 @@ This module creates the following resources in the targeted AWS account:
 ## Module Usage
 ---------------
 ```
-module "loupe_iam_policy" {
-    source  = "spacelift.io/loupetheapp/terraform-aws-iam-policy/aws"
+module "kingdevtk_iam_policy" {
+    source  = "spacelift.io/kingdevtktheapp/terraform-aws-iam-policy/aws"
     version = "2.0.0"
 
-    namespace        = "loupe"
+    namespace        = "kingdevtk"
     stage            = "dev"
     environment      = "use1"
     app_name         = "admin-tool"
@@ -69,7 +69,7 @@ module "loupe_iam_policy" {
       conditions = []
     }
 
-    loupe_tags = {
+    kingdevtk_tags = {
       Team = "Backend"
     }
   }

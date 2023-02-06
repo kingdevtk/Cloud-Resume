@@ -24,7 +24,7 @@ This module create the following resources in the targeted AWS account:
 - *type*: string
 
 **namespace**
-- An abbreviation or name of the organization (should be set to loupe).
+- An abbreviation or name of the organization (should be set to kingdevtk).
 - *type*: string
 
 **stage**
@@ -39,7 +39,7 @@ This module create the following resources in the targeted AWS account:
 - True if the network load balancer is internal. False if the network load balancer is internet facing.
 - *type*: bool
 
-**loupe_tags**
+**kingdevtk_tags**
 - A map of additional tags to assign to resources.
 - *type*: object({
   Team = string
@@ -141,19 +141,19 @@ This module create the following resources in the targeted AWS account:
 ---------------
 **Create Network Load Balancer Without Route53 Alias**
 ```
-module "loupe_nlb_without_route53_alias" {
-  source  = "spacelift.io/loupetheapp/terraform-aws-nlb/aws"
+module "kingdevtk_nlb_without_route53_alias" {
+  source  = "spacelift.io/kingdevtktheapp/terraform-aws-nlb/aws"
   version = "1.1.0"
 
-  app_name    = "loupe-app"
+  app_name    = "kingdevtk-app"
   environment = "use1"
-  namespace   = "loupe"
+  namespace   = "kingdevtk"
   stage       = "dev"
 
   is_internal = false
   vpc_id      = "vpc-0d5bd907e1fc1b504"
 
-  loupe_tags = {
+  kingdevtk_tags = {
     Team = "DevOps"
   }
 }
@@ -161,22 +161,22 @@ module "loupe_nlb_without_route53_alias" {
 
 **Create Network Load Balancer With Route53 Alias**
 ```
-module "loupe_nlb_with_route53_alias" {
-  source  = "spacelift.io/loupetheapp/terraform-aws-nlb/aws"
+module "kingdevtk_nlb_with_route53_alias" {
+  source  = "spacelift.io/kingdevtktheapp/terraform-aws-nlb/aws"
   version = "1.0.0"
 
-  app_name    = "loupe-app"
+  app_name    = "kingdevtk-app"
   environment = "use1"
-  namespace   = "loupe"
+  namespace   = "kingdevtk"
   stage       = "dev"
 
   create_route53_alias   = true
   is_internal            = false
-  nlb_route53_alias      = "loupe-app.dev.loupetheapp.com"
+  nlb_route53_alias      = "kingdevtk-app.dev.kingdevtktheapp.com"
   route53_parent_zone_id = "Z0605619360CWBQOF2DUO"
   vpc_id                 = "vpc-0d5bd907e1fc1b504"
 
-  loupe_tags = {
+  kingdevtk_tags = {
     Team = "DevOps"
   }
 }
@@ -184,18 +184,18 @@ module "loupe_nlb_with_route53_alias" {
 
 **Create Network Load Balancer With Route53 Alias and TLS Listener**
 ```
-module "loupe_nlb_with_route53_alias_and_tls_listener" {
-  source  = "spacelift.io/loupetheapp/terraform-aws-nlb/aws"
+module "kingdevtk_nlb_with_route53_alias_and_tls_listener" {
+  source  = "spacelift.io/kingdevtktheapp/terraform-aws-nlb/aws"
   version = "1.0.0"
 
-  app_name    = "loupe-app"
+  app_name    = "kingdevtk-app"
   environment = "use1"
-  namespace   = "loupe"
+  namespace   = "kingdevtk"
   stage       = "dev"
 
   create_route53_alias   = true
   is_internal            = false
-  nlb_route53_alias      = "loupe-app.dev.loupetheapp.com"
+  nlb_route53_alias      = "kingdevtk-app.dev.kingdevtktheapp.com"
   route53_parent_zone_id = "Z0605619360CWBQOF2DUO"
   ssl_certificate_arn    = "arn:aws:acm:us-east-1:383156531227:certificate/ba089a5b-ae18-4291-8d1b-d4d423de95d4"
   tls_enabled            = true
@@ -206,7 +206,7 @@ module "loupe_nlb_with_route53_alias_and_tls_listener" {
   target_group_target_ids = {
     app_ip = "10.0.1.0"
   }
-  loupe_tags = {
+  kingdevtk_tags = {
     Team = "DevOps"
   }
 }

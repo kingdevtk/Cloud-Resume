@@ -1,6 +1,6 @@
   # Amazon ECS (Elastic Container Service) Cluster Terraform Module
 
-This module is responsible for creating and configuring an ECS cluster in AWS in compliance with company standards.
+This module is responsible for creating and configuring an ECS cluster in AWS.
 
 ## What does this module do?
 ----------------------------
@@ -35,11 +35,11 @@ This module create the following resources in the targeted AWS account:
 ## Module Usage
 ---------------
 ```
-module "loupe_ecs_cluster" {
+module "ecs_cluster" {
   source = "../modules/aws/aws_ecs_cluster"
 
   environment      = "dev"
   region           = "us-east-1"
-  ecs_cluster_name = "loupe-ecs-cluster"
+  ecs_cluster_name = "ecs-cluster"
 }
 ```
