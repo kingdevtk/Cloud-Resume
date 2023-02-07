@@ -2,15 +2,13 @@ permissions:
   id-token: write # required to use OIDC authentication
   contents: read # required to checkout the code from the repo
 
-name: Deploy Website to S3 bucket
+name: Upload website files to S3 bucket
 on:
   push:
-    paths:
-      - 'cloud_resume/index.html'
-      - 'cloud_resume/style.css'
-      - '!cloud_resume/counter.js'
-      - '!Terraform/**'
-      - '!dev_learning/**'
+    paths-ignore:
+      - 'projects/Terraform/**'
+      - 'projects/dev_learning/**'
+      - 'projects/README.md'
     branches:
     - main
 
