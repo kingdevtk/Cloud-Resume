@@ -8,10 +8,6 @@ on:
     branches:
     - main
 
-env:
-  BUCKET_NAME : "trinatking.com"
-  AWS_REGION : "us-east-1"
-
 jobs:
   deploy:
     runs-on: macos-latest
@@ -22,9 +18,14 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        role-to-assume: arn:aws:iam::438207642063:role/github-actions-role
+        role-duration-seconds: 900 # the ttl of the session, in seconds.
         aws-region: us-east-1
 
-    - name: Deploy static site to S3 bucket
-      run: aws s3 sync s3://trinatking.com --delete
+    - name: AWS S3 Sync with CloudFront Cache invalidation
+      uses: kersvers/s3-sync-with-cloudfront-invalidation@v1.0.0
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        DISTRIBUTION_ID: 'E1DEVWCUSCYOPW'
+        SOURCE_DIR: 'cloud_resume' # optional: defaults to entire repository
+
