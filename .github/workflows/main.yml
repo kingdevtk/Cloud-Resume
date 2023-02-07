@@ -13,19 +13,15 @@ jobs:
     runs-on: unbuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3.3.0
 
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v3
+      uses: aws-actions/configure-aws-credentials@v1-node16
       with:
         role-to-assume: arn:aws:iam::438207642063:role/github-actions-role
         role-duration-seconds: 900 # the ttl of the session, in seconds.
         aws-region: us-east-1
 
-    - name: AWS S3 Sync with CloudFront Cache invalidation
-      uses: kersvers/s3-sync-with-cloudfront-invalidation@v1.0.0
-      env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-        DISTRIBUTION_ID: 'E1DEVWCUSCYOPW'
-        SOURCE_DIR: 'cloud_resume' # optional: defaults to entire repository
-
+    - name: Copy files to the test website with the AWS CLI
+      run: |
+        aws s3 sync . s3://trinatking.com
