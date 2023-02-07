@@ -24,4 +24,4 @@ jobs:
 
     - name: Copy files to the site with the AWS CLI
       run: |
-        aws s3 sync . s3://trinatking.com --exclude ".git/*" --exclude ".github/*" --exclude "Terraform/*" --exclude "README.md" --exclude "dev_learning/*" --exclude "/cloud_resume/*" --include "cloud_resume/index.html" --include "cloud_resume/style.css" 
+        aws s3 sync . s3://trinatking.com --exclude ".git/*" --exclude ".github/*" --exclude "Terraform/*" --exclude "README.md" --exclude "dev_learning/*" --exclude "/cloud_resume/*" --include "/cloud_resume/index.html" --include "/cloud_resume/style.css" 
