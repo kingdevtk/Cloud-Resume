@@ -6,10 +6,8 @@ name: Deploy Website to S3 bucket
 on:
   push:
     paths:
-      - 'cloud_resume/**'
-      - '!Terraform/**'
-      - '!dev_learning/**'
-      - '!README.md'
+      - 'projects/cloud_resume/**'
+      - '!projects/**'
 #     branches:
 #     - main
 
