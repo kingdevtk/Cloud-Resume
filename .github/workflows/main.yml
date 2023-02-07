@@ -8,8 +8,8 @@ on:
     branches:
     - main
     paths:
-        - 'projects/cloud_resume/index.html'
-        - 'projects/cloud_resume/styles.css'
+        - 'cloud_resume/index.html'
+        - 'cloud_resume/styles.css'
 
 jobs:
   deploy:
