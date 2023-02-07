@@ -5,10 +5,9 @@ permissions:
 name: Upload website files to S3 bucket
 on:
   push:
-    paths-ignore:
-      - 'projects/Terraform/**'
-      - 'projects/dev_learning/**'
-      - 'projects/README.md'
+    paths:
+      - 'projects/cloud_resume/index.html'
+      - 'projects/cloud_resume/styles.c'
     branches:
     - main
 
