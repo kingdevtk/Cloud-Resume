@@ -5,6 +5,10 @@ permissions:
 name: Deploy Website to S3 bucket
 on:
   push:
+    paths-ignore:
+      - 'Terraform/**'
+      - 'dev_learning/**'
+      - 'README.md'
     branches:
     - main
 
@@ -22,6 +26,6 @@ jobs:
         role-duration-seconds: 900 # the ttl of the session, in seconds.
         aws-region: us-east-1
 
-    - name: Copy files to the test website with the AWS CLI
+    - name: Copy files to the site with the AWS CLI
       run: |
         aws s3 sync . s3://trinatking.com
