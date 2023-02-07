@@ -1,11 +1,61 @@
-name: Upload Website to S3
+permissions:
+  id-token: write # required to use OIDC authentication
+  contents: read # required to checkout the code from the repo
 
+name: Deploy Website to S3 bucket
 on:
   push:
     branches:
     - main
 
+env:
+  BUCKET_NAME : "trinatking.com"
+  AWS_REGION : "us-east-1"
+
 jobs:
+<<<<<<< HEAD
+  S3PackageUpload:
+    runs-on: macos-latest
+    steps:
+      - name: Git clone the repo
+        uses: actions/checkout@v2
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::438207642063:role/github-actions-role
+          role-duration-seconds: 900
+          aws-region: us-east-1
+      # Upload a file to AWS s3
+      - name:  Copy index.html to s3
+        run: |
+          aws s3 cp ./index.html s3://${{ env.BUCKET_NAME }}/
+
+# # on:
+# #   push:
+# #     branches:
+# #     - main
+
+# permissions:
+#   id-token: write # This is required for requesting the JWT
+#   contents: read  # This is required for actions/checkout
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v2
+
+#     - name: configure aws credentials
+#       uses: aws-actions/configure-aws-credentials@v1
+#         with:
+#           role-to-assume: arn:aws:iam::438207642063:role/github-actions-role
+#           role-duration-seconds: 900
+#           aws-region: us-east-1
+
+#     - name: Deploy static site to S3 bucket
+#       run: aws s3 sync ./public/ s3://trinatking.com --delete
+=======
   deploy:
     runs-on: macos-latest
     steps:
@@ -21,3 +71,4 @@ jobs:
 
     - name: Deploy static site to S3 bucket
       run: aws s3 sync s3://trinatking.com --delete
+>>>>>>> 7819c33b58fa77728a33f153be1ef525751cec23
