@@ -5,12 +5,13 @@ permissions:
 name: Deploy Website to S3 bucket
 on:
   push:
-    paths-ignore:
-      - 'Terraform/**'
-      - 'dev_learning/**'
-      - 'README.md'
-    branches:
-    - main
+    paths:
+      - 'cloud_resume/**'
+      - '!Terraform/**'
+      - '!dev_learning/**'
+      - '!README.md'
+#     branches:
+#     - main
 
 jobs:
   deploy:
