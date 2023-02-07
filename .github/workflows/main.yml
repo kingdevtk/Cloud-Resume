@@ -8,8 +8,8 @@ on:
     paths:
       - 'projects/cloud_resume/**'
       - '!projects/**'
-#     branches:
-#     - main
+    branches:
+    - main
 
 jobs:
   deploy:
