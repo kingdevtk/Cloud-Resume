@@ -7,9 +7,6 @@ on:
   push:
     branches:
     - main
-    paths:
-        - 'cloud_resume/index.html'
-        - 'cloud_resume/styles.css'
 
 jobs:
   deploy:
