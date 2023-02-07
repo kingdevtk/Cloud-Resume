@@ -13,6 +13,7 @@ env:
   AWS_REGION : "us-east-1"
 
 jobs:
+<<<<<<< HEAD
   S3PackageUpload:
     runs-on: macos-latest
     steps:
@@ -54,3 +55,20 @@ jobs:
 
 #     - name: Deploy static site to S3 bucket
 #       run: aws s3 sync ./public/ s3://trinatking.com --delete
+=======
+  deploy:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync s3://trinatking.com --delete
+>>>>>>> 7819c33b58fa77728a33f153be1ef525751cec23
