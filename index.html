@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Trina King Resume</title>
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css"><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+</head>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="title text-center">
+        <h1>Trina King</h1>
+        <h4><a href = "mailto: trina.t.king@gmail.com">Email</a>&nbsp;<a href="https://github.com/kingdevtk">GitHub</a>&nbsp;
+        <hr />
+
+      </div>
+
+      <!-- summary section -->
+      <div class="summary">
+        <h2 class="text-center">Skills & Qualifications</h2>
+        <p></p>
+
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <p>AWS</p>
+            <p>Terraform</p>
+            <p>Datadog</p>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <p>Git</p>
+            <p>Github Actions</p>
+            <p>Docker</p>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <p>Python</p>
+            <p>Linux</p>
+            <p>PostgreSQL</p>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <p>Postman</p>
+            <p>Spacelift</p>
+            <p>Agile/Scrum Product Management</p>
+          </div>
+        </div>
+
+        </div>
+      <!-- work experience section -->
+      <div class="work-experience">
+        <h2 class="text-center">Work Experience</h2>
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h3>Loupe Tech, Inc.</h3>
+            <h4>DevOps Engineer</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>2022 - 2023</h3>
+          </div>
+        </div>
+        <div class="row experience-summary">
+          <div class="col-md-12">
+            <p>Design, configure, manage, and monitor cloud infrastructure on AWS to support internal and external applications. Create and maintain fully automated CI/CD pipelines. Application and database monitoring.
+            </p>
+          </div>
+        </div>
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h3>RubiconMD</h3>
+            <h4>Product Manager</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>2020 - 2022</h3>
+          </div>
+        </div>
+        <div class="row experience-summary">
+          <div class="col-md-12">
+            <p>Product strategy and execution for RubiconMD, a software application that allows physicians to submit eConsults to a panel of specialists. Lead various teams of engineers, UX designers, and stakeholders in delivering new features and product improvements.
+            </p>
+          </div>
+        </div>
+
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h3>iHeartRadio</h3>
+            <h4>Associate Product Manager, Publishing</h4>
+
+          </div>
+          <div class="col-md-3">
+            <h3>2018 - 2020</h3>
+          </div>
+        </div>
+        <div class="row experience-summary">
+          <div class="col-md-12">
+            <p>Led a team of platform engineers in the development and ongoing maintenance of iHeartRadio’s CMS (content management system) that powers over 950 radio station websites.
+            </p>
+
+            <div class="row experience-title">
+              <div class="col-md-9">
+                <h3>iHeartRadio</h3>
+                <h4>Senior Manager, Digital Applications Support</h4>
+
+              </div>
+              <div class="col-md-3">
+                <h3>2015 - 2018</h3>
+              </div>
+            </div>
+            <div class="row experience-summary">
+              <div class="col-md-12">
+                <p>Technical support, subject matter expert, and technical writer for iHeartRadio’s homegrown Content Management System.</p>
+
+                <div class="row experience-title">
+                  <div class="col-md-9">
+                    <h3>Blackboard, Inc.</h3>
+                    <h4>Consultant</h4>
+
+                  </div>
+                  <div class="col-md-3">
+                    <h3>2010 - 2014</h3>
+                  </div>
+                </div>
+                <div class="row experience-summary">
+                  <div class="col-md-12">
+                    <p>Partnered with college and university technology staff to implement Blackboard software for online course delivery and student data integration/management.
+                    </p>
+                       </div>
+
+                        </div>
+
+                        <!-- projects section -->
+                         <div class="work-experience">
+                             <h2 class="text-center">Projects</h2>
+                             <div class="row experience-title">
+                                 <div class="col-md-9">
+                                     <h3>Cloud Resume Challenge</h3>
+                                         </div>
+                                         <div class="col-md-3">
+                                         <h3>2022</h3>
+                                         </div>
+                                         </div>
+                                         <div class="row experience-summary">
+                                         <div class="col-md-12">
+                                         <p>Built this resume website from the ground up with a custom domain and HTTPs security; leveraged multiple AWS services (Route53, S3, DynamoDB, Lambda, APIGW, CloudFront, Certificate Manager) to deploy the site and trigger automatic updates to a visitor counter built into the page. Also built a CI/CD pipeline using AWS CodePipeline for the site code and GitHub Actions for IaC.</p>
+
+                 </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+<footer>
+    <p style = "text-align: center;">
+You are visitor: <span id="visits"></span>
+</p>
+
+<script>
+
+var visits = document.getElementById("visits");
+fetch("https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/", {
+    method: "GET",
+    // mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      //"Access-Control-Allow-Origin" : "*",
+    },
+  })
+  .then(response => response.json())
+
+fetch("https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/", {
+    method: "POST",
+    // mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      //"Access-Control-Allow-Origin" : "*",
+    },
+  })
+  .then(response => response.json())
+  .then(data => {
+    visits.innerHTML = data;
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+
+</script>
+                        </footer>
+</html>
