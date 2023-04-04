@@ -10,14 +10,14 @@ body {
 
 .title {
   margin-top: 60px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .title a {
-  color: #db4d57;
+  color: #3356ff;
 }
 .title a:hover {
   text-decoration: none;
-  font-weight: bold;
+  font-weight: bolder;
 }
 .title hr {
   width: 75%;
