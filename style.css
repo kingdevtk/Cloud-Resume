@@ -42,12 +42,12 @@ body {
   margin-bottom: 60px;
 }
 .work-experience p {
-  font-size: 1.6rem;
+  font-size: 1.875rem;
   letter-spacing: 0.2rem;
 }
 /* Center child elements */
 body,
-footer {
-  font-size: 1.25rem;
+footer p {
+  font-size: 1.6rem;
   background: #fff;
 }
