@@ -5,6 +5,7 @@ body {
   padding: 0;
   font-size: 16px;
   line-height: 1.6;
+  background: none;
 }
 
 .container {
@@ -51,6 +52,9 @@ body {
 
 .projects-section .project {
   margin-bottom: 30px;
+  border: 1px solid lightgrey;
+  padding: 20px;
+  border-radius: 4px;
 }
 
 .projects-section .project h3 {
@@ -65,13 +69,15 @@ body {
 }
 
 .footer {
-  padding: 20px 0;
-  background: #f5f5f5;
+  padding: 10px 0;
+  background: none;
 }
 
 .footer p {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
+  margin-bottom: 0;
 }
+
 
 /* Mobile Styles */
 @media only screen and (max-width: 768px) {
