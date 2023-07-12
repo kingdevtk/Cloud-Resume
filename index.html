@@ -1,95 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" >
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Trina T King Dot Com</title>
-      <link href='https://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
-      <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
-      <link rel="stylesheet" href="./style.css">
-   </head>
-   <div class="container">
-      <div class="row">
-         <div class="col-md-10 col-md-offset-1">
-            <div class="title text-center">
-               <h1>I’m Trina King. A tech worker based in Brooklyn, NY.</h1>
-               <h4>
-               <a href = "mailto: trina.t.king@gmail.com">Get in Touch</a>&nbsp;&nbsp;<a href="https://www.linkedin.com/in/trinaking/">LinkedIn</a>&nbsp;&nbsp;<a href="https://github.com/kingdevtk">GitHub</a>&nbsp;&nbsp;<a href="https://drive.google.com/file/d/1mZ9HUpFpRqSgH5U1qtKP29X22jBSzH2G/view?usp=drive_link">Resume</a>
-               <hr/>
-            </div>
-         </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trina T King Dot Com</title>
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="title text-center">
+          <h1>I’m Trina. A tech worker based in Brooklyn, NY.</h1>
+          <div class="social-links">
+            <a href="mailto:trina.t.king@gmail.com">Get in Touch</a>
+            <a href="https://www.linkedin.com/in/trinaking/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/kingdevtk" target="_blank">GitHub</a>
+            <a href="https://drive.google.com/file/d/1mZ9HUpFpRqSgH5U1qtKP29X22jBSzH2G/view?usp=drive_link" target="_blank">Resume</a>
+          </div>
+        </div>
       </div>
-   </div>
-   <!-- about section -->
-   <div class="work-experience">
+    </div>
+  </div>
+
+  <div class="section about-section">
+    <div class="container">
       <h2 class="text-center">About Me</h2>
-      <div class="row experience-title">
+      <div class="row">
+        <div class="col-md-12">
+          <p>I'm a technologist with a diverse background in devops, operations, technical consulting, and product management. Throughout my career, I've had the privilege of working with some of the world's most innovative companies, helping them to streamline their operations and drive growth through technology. Whether I'm building scalable infrastructure, developing agile product roadmaps, or providing strategic technical guidance, I always strive to deliver the highest level of quality and value. When I'm not honing my skills or pursuing new opportunities, you can find me running around NYC.</p>
+        </div>
       </div>
-      <div class="row experience-summary">
-         <div class="col-md-12">
-            <p>I'm a technologist with a diverse background in devops, operations, technical consulting, and product management. Throughout my career, I've had the privilege of working with some of the world's most innovative companies, helping them to streamline their operations and drive growth through technology. Whether I'm building scalable infrastructure, developing agile product roadmaps, or providing strategic technical guidance, I always strive to deliver the highest level of quality and value.
-               When I'm not honing my skills or pursuing new opportunities, you can find me running around NYC.
-            </p>
-         </div>
-      </div>
-      </ul>
-   </div>
-   </div>
-   </div>
-   <!-- projects section -->
-   <div class="work-experience">
+    </div>
+  </div>
+
+  <div class="section projects-section">
+    <div class="container">
       <h2 class="text-center">Projects</h2>
-      <div class="row experience-title">
-         <div class="col-md-9">
-            <h3>Cloud Resume Challenge</h3>
-         </div>
-         <div class="col-md-3">
-            <h3>2022</h3>
-         </div>
+      <div class="row">
+        <div class="col-md-9">
+          <h3>Cloud Resume Challenge</h3>
+        </div>
+        <div class="col-md-3">
+          <h3>2022</h3>
+        </div>
       </div>
-      <div class="row experience-summary">
-         <div class="col-md-12">
-            <p>Built this website from the ground up (HTML, CSS) with a custom domain and HTTPS security; leveraged multiple AWS cloud services (Route53, S3, DynamoDB, Lambda, APIGW, CloudFront, Certificate Manager) to deploy the site and trigger automatic updates to a visitor counter built into the page. Built a CI/CD pipeline using Github Actions, and automated provisioning and updates to AWS infrastructure using Terraform.
-            </p>
-         </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Built this website from the ground up (HTML, CSS) with a custom domain and HTTPS security; leveraged multiple AWS cloud services (Route53, S3, DynamoDB, Lambda, APIGW, CloudFront, Certificate Manager) to deploy the site and trigger automatic updates to a visitor counter built into the page. Built a CI/CD pipeline using Github Actions, and automated provisioning and updates to AWS infrastructure using Terraform.</p>
+        </div>
       </div>
-      </ul>
-   </div>
-   </div>
-   </div>
-   <footer>
-      <p style = "text-align: center;">
-         You are visitor: <span id="visits"></span>
-      </p>
-      <script>
-         var visits = document.getElementById("visits");
-         fetch("https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/", {
-             method: "GET",
-             // mode: "cors",
-             headers: {
-               "Content-Type": "application/json",
-               //"Access-Control-Allow-Origin" : "*",
-             },
-           })
-           .then(response => response.json())
+    </div>
+  </div>
 
-         fetch("https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/", {
-             method: "POST",
-             // mode: "cors",
-             headers: {
-               "Content-Type": "application/json",
-               //"Access-Control-Allow-Origin" : "*",
-             },
-           })
-           .then(response => response.json())
-           .then(data => {
-             visits.innerHTML = data;
-           })
-           .catch((error) => {
-             console.log(error);
-           })
+  <footer>
+    <div class="container">
+      <p class="text-center">You are visitor: <span id="visits"></span></p>
+    </div>
+  </footer>
 
-      </script>
-   </footer>
+  <script>
+    var visits = document.getElementById("visits");
+
+    fetch("https://g21z1pb3pa.execute-api.us-east-1.amazonaws.com/prod/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then(response => response.json())
+    .then(data => {
+      visits.innerHTML = data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  </script>
+</body>
 </html>
