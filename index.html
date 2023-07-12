@@ -30,14 +30,6 @@
     </div>
   </div>
 
-  <div class="menu" id="menu">
-    <div class="close" onclick="toggleMenu()"></div>
-    <ul>
-      <li><a href="javascript:void(0)" onclick="scrollToSection('about-section')">About Me</a></li>
-      <li><a href="javascript:void(0)" onclick="scrollToSection('projects-section')">Projects</a></li>
-    </ul>
-  </div>
-
   <div class="section about-section" id="about-section">
     <div class="container">
       <h2 class="text-center">About Me</h2>
@@ -85,17 +77,6 @@
     .catch((error) => {
       console.log(error);
     });
-
-    function toggleMenu() {
-      var menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
-
-    function scrollToSection(sectionId) {
-      var section = document.getElementById(sectionId);
-      section.scrollIntoView({ behavior: "smooth" });
-      toggleMenu(); // Close the menu after clicking a menu item
-    }
   </script>
 </body>
 </html>
