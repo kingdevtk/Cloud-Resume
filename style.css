@@ -63,3 +63,35 @@ body {
 .footer p {
   font-size: 1.8rem;
 }
+/* Updated mobile styles */
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+
+  .social-links a {
+    font-size: 1.4rem;
+  }
+
+  .section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  .projects-section .row h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .projects-section .row p {
+    font-size: 1.4rem;
+  }
+
+  .footer p {
+    font-size: 1.4rem;
+  }
+}
