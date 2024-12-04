@@ -6,6 +6,7 @@
   <title>Trina T King Dot Com</title>
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="./style.css">
   <style>
     body {
@@ -40,11 +41,15 @@
     }
 
     .social-links a {
-      display: block;
+      display: inline-block;
       color: #3356ff;
       text-decoration: none;
-      margin-bottom: 10px;
+      margin: 0 10px;
       font-size: 1.6rem;
+    }
+
+    .social-links a:hover {
+      color: #ff5733;
     }
 
     .section {
@@ -81,13 +86,16 @@
     }
 
     .footer {
-      padding: 10px 0;
-      background: none;
+      padding: 20px 0;
+      background-color: #f9f9f9;
+      border-top: 1px solid #eaeaea;
     }
 
     .footer p {
       font-size: 1.4rem;
+      text-align: center;
       margin-bottom: 0;
+      color: #555;
     }
 
     /* Mobile Styles */
@@ -98,7 +106,6 @@
       }
 
       .social-links a {
-        margin-bottom: 5px;
         font-size: 1.4rem;
       }
 
@@ -135,25 +142,13 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="title text-center">
-          <h1>I’m Trina. A tech worker based in New York City, USA.</h1>
+          <h1>I’m Trina. A vinyl record collector, boxing enthusiast, and tech worker based in New York City, USA.</h1>
           <div class="social-links">
-            <a href="mailto:trina.t.king@gmail.com">Get in Touch</a>
-            <a href="https://www.linkedin.com/in/trinaking/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/kingdevtk" target="_blank">GitHub</a>
-            <a href="https://drive.google.com/file/d/1xK5dnPCtLYB2hX0eKaqkz0_At7mkPJ5d/view?usp=sharing" target="_blank">Resume</a>
+            <a href="mailto:trina.t.king@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.discogs.com/user/eyebetrina" target="_blank" title="Music"><i class="fas fa-music"></i></a>
+            <a href="https://www.linkedin.com/in/trinaking/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/kingdevtk" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section about-section" id="about-section">
-    <div class="container">
-      <h2 class="text-center">About Me</h2>
-      <div class="row">
-        <div class="col-md-12">
-          <p>I have a diverse background that includes product management, engineering, and technical consulting. My specialties are streamlining processes, driving growth through technology, and cloud computing.</p>
-          <p>I'm not all tech though! I love collecting vinyl records, inhaling tacos, exploring the world, and spending time with loved ones over food (or FaceTime).</p>
         </div>
       </div>
     </div>
@@ -161,7 +156,7 @@
 
   <div class="section projects-section" id="projects-section">
     <div class="container">
-      <h2 class="text-center">Projects</h2>
+      <h2 class="text-center">Stuff I'm Working On</h2>
       <div class="project">
         <h3>100 Days of Code Python Challenge (2023)</h3>
         <p>The challenge encourages participants to work on coding projects, solve programming problems, and learn new concepts and technologies.</p>
@@ -175,9 +170,13 @@
 
   <footer class="footer">
     <div class="container">
-      <p class="text-center">&copy; 2023 Trina T King. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Trina T King. Boxing is life...distilled.</p>
     </div>
   </footer>
 
+  <script>
+    // Set dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
