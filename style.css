@@ -1,27 +1,108 @@
-/* Social Links with Icons */
-.social-links a {
-  color: #3356ff;
-  font-size: 1.8rem;
-  margin-right: 15px;
-  text-decoration: none;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+/* Typography Adjustments */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #1b1b25;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
-.social-links a:hover {
-  transform: scale(1.1);
+h1, h2, h3 {
+  font-weight: 300; /* Lighter weight for all headings */
   color: #1b1b25;
 }
 
-/* Footer Styling */
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #3356ff;
+  font-size: 1.6rem; /* Slightly smaller for a modern feel */
+  margin-right: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+  color: #1b1b25;
+  transform: scale(1.1);
+}
+
+/* Projects Section */
+.projects-section {
+  margin-top: 50px;
+  padding: 30px 0;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+.project h3 {
+  font-size: 1.3rem; /* Lighter weight and smaller size */
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.project p {
+  font-size: 1.1rem; /* Lighter and smaller text for body content */
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+/* Footer */
 .footer {
   padding: 20px 0;
   background-color: #f9f9f9;
   border-top: 1px solid #eaeaea;
-  text-align: center;
 }
 
 .footer p {
-  font-size: 1.6rem;
+  font-size: 1rem;
   color: #1b1b25;
   margin: 0;
+  font-weight: 300; /* Lighter font in footer */
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .social-links a {
+    font-size: 1.4rem;
+  }
+
+  .project p {
+    font-size: 1rem;
+  }
 }
