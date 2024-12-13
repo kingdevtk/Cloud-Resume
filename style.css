@@ -49,40 +49,10 @@ p {
   transform: scale(1.1);
 }
 
-/* Life Lately Section */
-.life-lately {
-  background-color: #f9f9f9;
-  padding: 50px 0;
-}
-
-.life-lately .card {
-  background: #fff;
-  border: 1px solid #eaeaea;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-.life-lately .card h3 {
-  margin-bottom: 10px;
-  color: #1b1b25;
-}
-
-.life-lately .card p {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.life-lately .card em {
-  font-style: italic;
-  color: #888;
-}
-
 /* Footer Section */
 .footer {
-  background: #1b1b25;
-  color: #fff;
+  background: #ffffff;
+  color: #1b1b25;
   padding: 20px 0;
 }
 
